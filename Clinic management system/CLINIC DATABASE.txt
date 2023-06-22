@@ -1,0 +1,76 @@
+﻿
+
+create user 'sane'@'localhost' identified by 'Tuesday@123';
+
+grant select,insert,update,create,drop,references , execute on *.* to 'sane'@'localhost';
+
+DROP DATABASE IF EXISTS CLINIC_SYSTEM;
+
+CREATE DATABASE CLINIC_SYSTEM;
+
+USE CLINIC_SYSTEM;
+
+CREATE TABLE CATEGORY_TABLE 
+(
+   CategoryID int(5) ,
+   CategoryName varchar(40) NOT NULL,
+   PRIMARY KEY (CategoryID) 
+     
+);
+
+INSERT INTO CATEGORY_TABLE VALUES (1,'General');
+INSERT INTO CATEGORY_TABLE VALUES (2,'Pathology');
+INSERT INTO CATEGORY_TABLE VALUES (3,'Paediatrics');
+INSERT INTO CATEGORY_TABLE VALUES (4,'Oncology');
+INSERT INTO CATEGORY_TABLE VALUES (5,'Dentistry');
+
+
+CREATE TABLE DOCTOR_TABLE
+(
+   Surname varchar(40)  PRIMARY KEY,
+   FirstName varchar(40) NOT NULL,
+   IdNumber int(20) NOT NULL,
+   EmplymentNumber int(20) NOT NULL,
+   YearOfGrad int(20) NOT NULL,
+   Specialisation varchar(40) NOT NULL
+   
+);
+
+CREATE TABLE PATIENT_TABLE
+(
+   Surname varchar(40)  PRIMARY KEY,
+   FirstName varchar(40) NOT NULL,
+   IdNumber int(20) NOT NULL,
+   Specialisation varchar(40) NOT NULL,
+   Medication varchar(40) NOT NULL,
+   QUANTITY int(20) NOT NULL
+);
+
+CREATE TABLE DIAGNOSE_TABLE
+(
+   Surname varchar(40)  PRIMARY KEY,
+   IdNumber int(20) NOT NULL,
+   Specialisation varchar(40) NOT NULL,
+   Medication varchar(40) NOT NULL,
+   QUANTITY int(20) NOT NULL
+  
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
